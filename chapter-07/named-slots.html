@@ -1,42 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://unpkg.com/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 <body>
-  <div id="app">
+<div id="app">
     <form-component>
-      <h1>{{header}}</h1>
-      <label for="title" slot="titleSlot">{{titleLabel}}</label>
-      <label for="author" slot="authorSlot">{{authorLabel}}</label>
+        <h1>{{header}}</h1>
+        <label for="title" slot="titleSlot">{{titleLabel}}</label>
+        <label for="author" slot="authorSlot">{{authorLabel}}</label>
     </form-component>
-  </div>
+</div>
 <script>
-const FormComponent ={
-  template: `
+    const FormComponent = {
+        template: `
   <div>
     <form>
       <slot></slot>
-      <slot name="titleSlot"></slot><input id="title" type="text" /><br/>
-      <slot name="authorSlot"></slot><input id="author" type="text" /><br/>
+      <p>
+      <slot name="titleSlot"></slot>
+      <input id="title" type="text" />
+      </p>
+      <p>
+      <slot name="authorSlot"></slot>
+      <input id="author" type="text" />
+      </p>
       <button>Submit</button>
     </form>
   </div>
 
   `
-}
-new Vue({
-  el: '#app',
-  components: {'form-component': FormComponent},
-  data() {
-    return {
-        titleLabel: 'The Title:',
-        authorLabel: 'The Author:',
-        header: 'Book Author Form'
     }
-  }
+    new Vue({
+        el: '#app',
+        components: {'form-component': FormComponent},
+        data() {
+            return {
+                titleLabel: 'The Title:',
+                authorLabel: 'The Author:',
+                header: 'Book Author Form'
+            }
+        }
 
-})
+    })
 </script>
 </body>
 </html>

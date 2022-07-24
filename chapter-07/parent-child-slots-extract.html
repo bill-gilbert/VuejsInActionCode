@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://unpkg.com/vue"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 <body>
   <div id="app">
-    <form-component
-      :author="authorLabel"
-      :title="titleLabel">
+    <form-component :author="authorLabel" :title="titleLabel">
       <h1>{{header}}</h1>
     </form-component>
   </div>
@@ -16,8 +14,8 @@ const FormComponent ={
   template: `
   <div>
     <form>
-      <slot></slot>
       <label for="title">{{title}}</label> <input id="title" type="text" /><br/>
+      <slot></slot>
       <label for="author">{{author}}</label><input id="author" type="text" /><br/>
       <button>Submit</button>
     </form>
