@@ -1,45 +1,43 @@
 <!DOCTYPE html>
-    <script src="https://unpkg.com/vue"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <html>
 <head>
 </head>
 <body>
-  <div id="app">
+<div id="app">
     <div id="container">
-      <h1 class="text-center">{{title}}</h1>
-      <div class="row">
-        <div class="col-md-3 col-md-offset-2">
-          <my-comp1 class="comp1"></my-comp1>
-        </div>
-        <div class="col-md-3">
-            <h2 class="text-center">Or</h2>
-        </div>
-        <div class="col-md-3">
-          <my-comp2 class="comp2"></my-comp2>
-        </div> <!--end col-md-2-->
-      </div><!-- end row -->
+        <h1 class="text-center">{{title}}</h1>
+        <div class="row">
+            <div class="col-md-3 col-md-offset-2">
+                <my-comp1 class="comp1"></my-comp1>
+            </div>
+            <div class="col-md-3">
+                <h2 class="text-center">Or</h2>
+            </div>
+            <div class="col-md-3">
+                <my-comp2 class="comp2"></my-comp2>
+            </div> <!--end col-md-2-->
+        </div><!-- end row -->
     </div> <!-- end container -->
-  </div> <!-- end app -->
+</div> <!-- end app -->
 
-  <script>
-
-
-  Vue.mixin({
-    methods: {
-      pressed(val) {
-        alert(val);
-      }
-    },
-    data() {
-        return {
-            item: ''
+<script>
+    Vue.mixin({
+        methods: {
+            pressed(val) {
+                alert(val);
+            }
+        },
+        data() {
+            return {
+                item: ''
+            }
         }
-    }
-  });
+    });
 
-  const comp1 = {
-    template: `<div>
+    const comp1 = {
+        template: `<div>
     <h1>Enter Email</h1>
     <form>
       <div class="form-group">
@@ -50,11 +48,9 @@
       </div>
     </form>
     </div>`
-
-
-  }
-  const comp2 = {
-    template: `<div>
+    }
+    const comp2 = {
+        template: `<div>
     <h1>Enter Number</h1>
       <form>
         <div class="form-group">
@@ -65,20 +61,19 @@
         </div>
       </form>
     </div>`
-
-  }
-  new Vue({
-    el: '#app',
-    data() {
-      return {
-        title: 'Mixin in example using two components'
-      }
-    },
-    components:{
-        myComp1: comp1,
-        myComp2: comp2
     }
+    new Vue({
+        el: '#app',
+        data() {
+            return {
+                title: 'Mixin in example using two components'
+            }
+        },
+        components: {
+            myComp1: comp1,
+            myComp2: comp2
+        }
 
-  });
-  </script>
+    });
+</script>
 </body>

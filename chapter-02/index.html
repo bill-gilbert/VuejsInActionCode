@@ -35,10 +35,10 @@
 
   </main>
 
-</div> 
+</div>
 </body>
 
-<script type="text/javascript">
+<script>
   var APP_LOG_LIFECYCLE_EVENTS = true;
   var webstore = new Vue({
     el: '#app',
@@ -70,6 +70,11 @@
       }
 
     },
+    methods: {
+      forMounted: function () {
+        console.log("for Mount")
+      }
+    },
     beforeCreate: function () {	//#B
       if (APP_LOG_LIFECYCLE_EVENTS) {	//#B
         console.log("beforeCreate");	//#B
@@ -89,6 +94,7 @@
       if (APP_LOG_LIFECYCLE_EVENTS) {	//#E
         console.log(" mounted"); 	//#E
       } 	//#E
+      this.forMounted();
     },	//#E
     beforeUpdate: function () { 	//#F
       if (APP_LOG_LIFECYCLE_EVENTS) { 	//#F

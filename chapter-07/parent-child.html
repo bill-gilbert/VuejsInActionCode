@@ -19,7 +19,15 @@
           </form>
           </div>
         `,
-        props: ['title', 'author']
+        props: ['title', 'author'],
+        methods: {
+            hello: function () {
+                console.log("Hello")
+            }
+        },
+        mounted: function () {
+            this.hello();
+        }
     }
     new Vue({
         el: '#app',
